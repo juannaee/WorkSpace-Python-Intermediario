@@ -1,0 +1,8 @@
+pip install pyinstaller
+cd na pasta do arquivo
+python -m PyInstaller main2.py  --onefile ( cria o executavel so com um arquivo)
+python -m PyInstaller main2.py  --onefile --noconsole ( cria sem que abra o console)
+tudo no cmd
+
+pip freeze > requirements.txt (Criar um arquivo, com as especificações das bibliotecas instaladas) 
+

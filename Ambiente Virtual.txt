@@ -1,0 +1,13 @@
+dentro da pasta que você quer criar o ambiente virtual: python -m venv venv
+logo depois acesse a pasta scripts dentro do venv e de um source activate
+(Recomendo usar gitbash)
+
+Caso por algum motivo eu precise resetar meu "python" global por ter instalado bibliotecas nele
+basta seguir esses passos aqui:
+1 - Criar um arquivo requirements.txt ( EX: pip freeze > requirementstmp.txt)
+2 - Desinstalar todas as bibliotecas nesse arquivo ( EX: pip uninstall -r requirementstmp.txt -y)
+OBS: Este comando vai executar a desinstalação dos pacotes. Caso execute sem o parâmetro -y 
+vai ter que confirmar a desinstalação 1 por 1.
+
+Para instalar todas as bibliotecas de um requirements.txt basta usar:
+pip install -r requirements.txt

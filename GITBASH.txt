@@ -1,0 +1,73 @@
+Configurando: 
+ git config --global user.email “seu e-mail do github”
+ git config --global user.name “seu nome ”
+(confirmação: git config --list)
+Chave ssh : 
+ssh-keygen -t ed25519 -C "mesmoe480@gmail.com"
+
+Tirar branch master: 
+git branch -m master main
+
+ 
+Iniciando repositório:
+git init 
+ 
+salvando versões: 
+git add . (mandou pro stage) 
+git commit -m “mudei algo”
+Visualizando alterações no projeto:
+git status (ver se tem alterações  no stage pra salvar )
+git log ( visualizar todas as versões e mudanças dessas versões ) 
+git log –oneline ( forma resumida , padrão )
+git diff ( visualizar mudanças detalhadas ) 
+----------------------------------------------------------------------------------
+ 
+Criando um espaço remoto pro projeto: 
+git remote add origin git@github.com:juanaee/TreinandooGit.git (Necessário ter repositório no github) 
+Alterando espaço remoto do projeto
+Basta usar o seguinte comando 
+git remote set-url origin link do repositório
+ ----------------------------------------------------------------------------------
+ 
+Mandando commit para o repositório remoto (github) : 
+git push -u origin main ( caso seja a primeira vez usando )
+git push
+Força push (Ação destrutiva)
+ git push -f origin main 
+
+Trazer commits de um projeto em um repositório remoto:
+git pull origin main
+o que fazer quando abre o editor VIM:
+i (habilita o modo de edição )
+ESC
+ 
+:wp 
+ENTER (saindo, salvando a alteração)
+ESC
+ 
+:q!  
+ENTER (saindo sem salvar a alteração)
+ 
+Oque fazer quando o pull abre o editor VIM:
+Aperte I 
+depois Esc.  
+escreva :wp para salvar
+logo depois de enter 
+feche :q!
+ ----------------------------------------------------------------------------------
+“Andando” entre os commits: 
+git checkout HEAD~1
+Em caso de fazer alterações acidentalmente em um commit antigo:
+git clean -df
+git checkout -- .
+ 
+Apagando commit porém mantendo as modificações:
+ git reset --soft HEAD~1
+ 
+Apagando commit e modificação : 
+git reset --hard código do commit
+ ou
+git reset --hard HEAD~1
+ 
+
+ 
