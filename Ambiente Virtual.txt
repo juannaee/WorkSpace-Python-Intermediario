@@ -1,40 +1,29 @@
-Configurando Ambientes Virtuais e Gerenciando Bibliotecas no Git Bash e PowerShell
+# Configurando Ambientes Virtuais e Gerenciando Bibliotecas no Git Bash e PowerShell
 
-Usando o Git Bash:
+## Usando o Git Bash:
+```bash
 
-Para criar um ambiente virtual na pasta desejada, digite o seguinte comando no Git Bash:
-
-
+1. Para criar um ambiente virtual na pasta desejada, digite o seguinte comando no Git Bash:
 python -m venv venv
-Em seguida, acesse a pasta "scripts" dentro do ambiente virtual usando o Git Bash e ative o ambiente com o comando:
 
-bash
-
+Acesse a pasta "scripts" dentro do ambiente virtual usando o Git Bash e ative o ambiente com os comandos:
 source venv/Scripts/activate
+
 Usando o PowerShell no Visual Studio Code:
-
 Para criar um ambiente virtual via PowerShell, execute os seguintes passos:
-
 Crie o ambiente virtual com o comando:
-
 python -m venv venv
 Ative o ambiente virtual através do comando:
-
 .\venv\Scripts\activate
 
 Resetando o Python Global e Lidando com Bibliotecas:
-
-
-
 Se precisar reverter o Python global devido a bibliotecas instaladas, siga estas etapas:
-
 Crie um arquivo "requirements.txt" usando o comando (por exemplo):
 pip freeze > requirementstmp.txt
 
 Desinstale todas as bibliotecas listadas no arquivo com o comando (por exemplo):
 pip uninstall -r requirementstmp.txt -y
 Lembre-se de que o parâmetro -y executa a desinstalação sem a necessidade de confirmação para cada pacote.
-
 Para reinstalar todas as bibliotecas a partir de um arquivo "requirements.txt", utilize:
 pip install -r requirements.txt
 
@@ -44,7 +33,3 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 Isso permitirá a execução de scripts assinados localmente. Certifique-se de executar o PowerShell como administrador.
 
 Ao seguir esses passos, você estará pronto para criar ambientes virtuais, gerenciar bibliotecas e solucionar problemas relacionados ao PowerShell de forma eficaz.
-
-
-
-

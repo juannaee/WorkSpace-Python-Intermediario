@@ -1,73 +1,71 @@
-Configurando: 
- git config --global user.email “seu e-mail do github”
- git config --global user.name “seu nome ”
-(confirmação: git config --list)
-Chave ssh : 
-ssh-keygen -t ed25519 -C "mesmoe480@gmail.com"
+## Configurando e Controlando Versionamento de Código com Git
 
-Tirar branch master: 
-git branch -m master main
+**Passo 1: Instalar o Git:**
 
- 
-Iniciando repositório:
-git init 
- 
-salvando versões: 
-git add . (mandou pro stage) 
-git commit -m “mudei algo”
-Visualizando alterações no projeto:
-git status (ver se tem alterações  no stage pra salvar )
-git log ( visualizar todas as versões e mudanças dessas versões ) 
-git log –oneline ( forma resumida , padrão )
-git diff ( visualizar mudanças detalhadas ) 
-----------------------------------------------------------------------------------
- 
-Criando um espaço remoto pro projeto: 
-git remote add origin git@github.com:juanaee/TreinandooGit.git (Necessário ter repositório no github) 
-Alterando espaço remoto do projeto
-Basta usar o seguinte comando 
-git remote set-url origin link do repositório
- ----------------------------------------------------------------------------------
- 
-Mandando commit para o repositório remoto (github) : 
-git push -u origin main ( caso seja a primeira vez usando )
-git push
-Força push (Ação destrutiva)
- git push -f origin main 
+Instale o Git a partir do site oficial: https://git-scm.com/downloads, se ainda não o fez.
+Passo 2: Configurar Nome e Email:
 
-Trazer commits de um projeto em um repositório remoto:
+Configure seu nome de usuário e endereço de e-mail no Git Bash usando:
+git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"
+
+Passo 3: Criar um Repositório:
+Navegue até a pasta do seu projeto no Git Bash e inicie um novo repositório Git:
+git init
+
+Passo 4: Adicionar e Confirmar Alterações:
+Adicione as alterações do seu projeto ao controle de versão:
+git add .
+git commit -m "Mensagem descritiva das alterações"
+
+Passo 5: Conectar a um Repositório Remoto:
+Se você quiser enviar o código para um repositório remoto (como o GitHub):
+Crie um repositório vazio no GitHub.
+Vincule o repositório local ao repositório remoto:
+git remote add origin URL_DO_REPOSITORIO
+Substitua URL_DO_REPOSITORIO pela URL do repositório remoto que você criou.
+
+Passo 6: Enviar Alterações para o Repositório Remoto:
+Envie suas alterações para o repositório remoto usando:
+git push origin main
+
+Passo 7: Atualizar seu Repositório Local:
+Para obter as últimas alterações do repositório remoto para o repositório local:
 git pull origin main
-o que fazer quando abre o editor VIM:
-i (habilita o modo de edição )
-ESC
- 
-:wp 
-ENTER (saindo, salvando a alteração)
-ESC
- 
-:q!  
-ENTER (saindo sem salvar a alteração)
- 
-Oque fazer quando o pull abre o editor VIM:
-Aperte I 
-depois Esc.  
-escreva :wp para salvar
-logo depois de enter 
-feche :q!
- ----------------------------------------------------------------------------------
-“Andando” entre os commits: 
-git checkout HEAD~1
-Em caso de fazer alterações acidentalmente em um commit antigo:
-git clean -df
-git checkout -- .
- 
-Apagando commit porém mantendo as modificações:
- git reset --soft HEAD~1
- 
-Apagando commit e modificação : 
-git reset --hard código do commit
- ou
-git reset --hard HEAD~1
- 
 
- 
+Passo 8: Ramificações (Branches) (Opcional):
+
+Se você quiser trabalhar em um ramo separado, crie um novo ramo usando:
+git branch nome-do-ramo
+git checkout nome-do-ramo
+Depois de fazer suas alterações, você pode mesclar o ramo de volta para o ramo principal usando:
+git checkout main
+git merge nome-do-ramo
+Alterando o Nome do Branch Padrão de "master" para "main":
+
+Alterando o Nome do Branch Padrão de "master" para "main"
+Verifique se está no branch "master" usando o comando:
+git branch
+Se o asterisco (*) estiver ao lado de "master", significa que você está no branch "master".
+
+Crie um novo branch chamado "main":
+git branch main
+
+Alterne para o branch "main":
+git checkout main
+
+Mova os commits do "master" para o "main":
+git rebase master
+
+Delete o branch antigo "master":
+git branch -d master
+
+Renomeie o branch "main" para "master" (ou outro nome desejado):
+git branch -m main master
+
+Configure o novo branch como padrão:
+git branch --set-upstream-to=origin/master master
+
+Atualize o repositório remoto com o novo nome do branch:
+git push origin master
+

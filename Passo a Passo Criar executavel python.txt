@@ -1,8 +1,30 @@
-pip install pyinstaller
-cd na pasta do arquivo
-python -m PyInstaller main2.py  --onefile ( cria o executavel so com um arquivo)
-python -m PyInstaller main2.py  --onefile --noconsole ( cria sem que abra o console)
-tudo no cmd
+## Criando um Executável com PyInstaller e Gerando um Arquivo de Requisitos
 
-pip freeze > requirements.txt (Criar um arquivo, com as especificações das bibliotecas instaladas) 
+
+**Passo 1: Instalação do PyInstaller:**
+```bash
+Abra o prompt de comando (CMD) e instale o PyInstaller com o seguinte comando:
+pip install pyinstaller
+Passo 2: Navegar até a Pasta do Arquivo:
+Use o comando cd para navegar até a pasta onde se encontra o arquivo que deseja transformar em um executável. Por exemplo:
+cd caminho/para/sua/pasta
+
+
+Passo 3: Criar o Executável:
+Execute o PyInstaller para criar um executável a partir do arquivo principal (main2.py).
+Use o seguinte comando para criar o executável em um único arquivo:
+python -m PyInstaller main2.py --onefile
+
+Passo 4: Criar um Executável Sem Console:
+Se desejar criar um executável sem abrir o console, utilize o comando:
+python -m PyInstaller main2.py --onefile --noconsole
+
+Passo 5: Gerar um Arquivo de Requisitos:
+Para criar um arquivo requirements.txt contendo as bibliotecas instaladas, execute o comando:
+pip freeze > requirements.txt
+Isso é útil para documentar as especificações das bibliotecas usadas no seu projeto.
+
+Ao seguir esses passos no prompt de comando, você estará apto a criar executáveis usando o PyInstaller e a gerar um arquivo de requisitos para as bibliotecas instaladas. Certifique-se de substituir main2.py pelo nome do arquivo principal do seu projeto e de ajustar os caminhos de acordo com a localização dos seus arquivos.
+
+
 
