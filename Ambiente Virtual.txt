@@ -1,13 +1,50 @@
-dentro da pasta que você quer criar o ambiente virtual: python -m venv venv
-logo depois acesse a pasta scripts dentro do venv e de um source activate
-(Recomendo usar gitbash)
+Configurando Ambientes Virtuais e Gerenciando Bibliotecas no Git Bash e PowerShell
 
-Caso por algum motivo eu precise resetar meu "python" global por ter instalado bibliotecas nele
-basta seguir esses passos aqui:
-1 - Criar um arquivo requirements.txt ( EX: pip freeze > requirementstmp.txt)
-2 - Desinstalar todas as bibliotecas nesse arquivo ( EX: pip uninstall -r requirementstmp.txt -y)
-OBS: Este comando vai executar a desinstalação dos pacotes. Caso execute sem o parâmetro -y 
-vai ter que confirmar a desinstalação 1 por 1.
+Usando o Git Bash:
 
-Para instalar todas as bibliotecas de um requirements.txt basta usar:
+Para criar um ambiente virtual na pasta desejada, digite o seguinte comando no Git Bash:
+
+
+python -m venv venv
+Em seguida, acesse a pasta "scripts" dentro do ambiente virtual usando o Git Bash e ative o ambiente com o comando:
+
+bash
+
+source venv/Scripts/activate
+Usando o PowerShell no Visual Studio Code:
+
+Para criar um ambiente virtual via PowerShell, execute os seguintes passos:
+
+Crie o ambiente virtual com o comando:
+
+python -m venv venv
+Ative o ambiente virtual através do comando:
+
+.\venv\Scripts\activate
+
+Resetando o Python Global e Lidando com Bibliotecas:
+
+
+
+Se precisar reverter o Python global devido a bibliotecas instaladas, siga estas etapas:
+
+Crie um arquivo "requirements.txt" usando o comando (por exemplo):
+pip freeze > requirementstmp.txt
+
+Desinstale todas as bibliotecas listadas no arquivo com o comando (por exemplo):
+pip uninstall -r requirementstmp.txt -y
+Lembre-se de que o parâmetro -y executa a desinstalação sem a necessidade de confirmação para cada pacote.
+
+Para reinstalar todas as bibliotecas a partir de um arquivo "requirements.txt", utilize:
 pip install -r requirements.txt
+
+Resolvendo Problemas no PowerShell:
+Caso enfrente problemas de execução de scripts no PowerShell, desbloqueie o acesso com o seguinte comando:
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+Isso permitirá a execução de scripts assinados localmente. Certifique-se de executar o PowerShell como administrador.
+
+Ao seguir esses passos, você estará pronto para criar ambientes virtuais, gerenciar bibliotecas e solucionar problemas relacionados ao PowerShell de forma eficaz.
+
+
+
+
