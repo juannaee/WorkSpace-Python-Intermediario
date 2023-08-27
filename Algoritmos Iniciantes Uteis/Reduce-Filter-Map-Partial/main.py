@@ -2,7 +2,6 @@ import random
 import pprint
 from functools import reduce
 
-
 MIN_PRECO = 50
 MAX_PRECO = 5000
 
