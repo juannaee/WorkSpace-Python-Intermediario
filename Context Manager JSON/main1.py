@@ -1,7 +1,7 @@
 import json
 
 caminho_completo = "C:\\Users\\MICRO\\OneDrive\\Área de Trabalho\\WorkSpace Python Intermediario\\Context Manager JSON\\"
-caminho_completo += "Arquivo_teste1.txt"
+caminho_completo += "Arquivo_teste1.json"
 
 
 usuario = {
