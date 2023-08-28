@@ -1,0 +1,14 @@
+{
+  "Nome": "Juan Guilherme",
+  "Sobrenome": "Silva Lemos",
+  "Idade": 21,
+  "Endereco": [
+    {
+      "Endereco_1": "Rua 84"
+    },
+    {
+      "Endereco_2": "Rua 112"
+    }
+  ],
+  "Desenvolvedor": true
+}

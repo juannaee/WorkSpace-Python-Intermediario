@@ -1,7 +1,1 @@
-ATENÇÃO
-linha_1
-linha_2
-linha_3
-linha_4
-linha_5
-linha_6
+{"Nome": "Juan Guilherme", "Sobrenome": "Silva Lemos", "Idade": 21, "Endereco": [{"Endereco_1": "Rua 84"}, {"Endereco_2": "Rua 112"}], "Desenvolvedor": true}
