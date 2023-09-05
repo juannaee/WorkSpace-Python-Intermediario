@@ -53,7 +53,7 @@ def adicionar_produto(produto, lista_produtos):
 
 def listar_produtos(lista_produtos):
     """
-    Função para listar os produtos da lista.
+    Função para listar os produtos da lista.......
 
     Args:
         lista_produtos (list): A lista de produtos a ser listada.
