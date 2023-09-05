@@ -4,7 +4,15 @@ import json
 
 # Caminho completo para o arquivo JSON onde os dados serão armazenados
 # Lembra de mudar o caminho de acordo com a maquina onde será executado
-caminho_completo = "C:\\Users\\MICRO\\OneDrive\\Área de Trabalho\\WorkSpace Python Intermediario\\Exercicio Lista de Tarefas\\"
+
+# CASA #
+# caminho_completo = "C:\\Users\\MICRO\\OneDrive\\Área de Trabalho\\WorkSpace Python Intermediario\\Exercicio Lista de Tarefas\\"
+# caminho_completo += "lista.json"
+
+# TRABALHO #
+caminho_completo = (
+    "C:\\Users\\User\\Desktop\\WorkSpace Intermediario\\Exercicio Lista de Tarefas\\"
+)
 caminho_completo += "lista.json"
 
 
