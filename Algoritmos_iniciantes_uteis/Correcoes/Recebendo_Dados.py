@@ -6,7 +6,8 @@ while True:
     nome = input("Digite seu Nome: ")
     idade = input("Digite sua idade: ")
     nome = nome.strip()
-    if not nome or len(nome) < 3 or any(letra.isdigit() for letra in nome):
+    # if not nome or len(nome) < 3 or any(letra.isdigit() for letra in nome):
+    if not nome or len(nome) < 3 or not nome.isalpha():
         print("Você deve digitar um nome valido")
     try:
         idade = int(idade)
