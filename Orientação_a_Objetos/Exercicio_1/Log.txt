@@ -1,0 +1,4 @@
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
