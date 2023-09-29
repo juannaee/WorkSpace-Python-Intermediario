@@ -42,7 +42,7 @@ if __name__ == "__main__":
     log_test_print.log(msg)
     log_test_print.log_message(msg)
     log_test_save_file = LogFile()
-    log_test_save_file.log_message(msg)
+    log_test_save_file.log_message(msg + "TEST - MODULE LOG")
     # log_test_1 = Log()
     # print(log_test_1.log_message(msg))
 
