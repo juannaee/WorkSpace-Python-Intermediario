@@ -1,5 +1,7 @@
 from log import LogFile
 from abc import ABC, abstractmethod
+from util import Display
+
 
 import time
 
@@ -14,6 +16,7 @@ class Electronics(ABC):
         self._connected = False
         self._log = LogFile()
         self.battery = 0
+        self.display = Display()
 
     @abstractmethod
     def connect(self):
@@ -37,24 +40,22 @@ class Smartphone(Electronics):
             self._connected = True
 
             self._log.log_message("Connecting to Smartphone")
+            print("Connecting to Smartphone")
 
     def disconnect(self):
         if self._connected:
             self._connected = False
             self._log.log_message("disconnect smartphone")
+            print("disconnect smartphone")
 
     def charge_battery(self):
         for i in range(BATTERY_FULL + 1):
             time.sleep(SLEEP_TIME)
             self.battery = i
-            self.display_battery_status(i)
+            self.display.display_status(BATTERY_FULL, i)
 
         print("\nLoaded success 100%")
         return self.battery
-
-    def display_battery_status(self, percentage):
-        bar = "#" * percentage + " " * (BATTERY_FULL - percentage)
-        print(f"LOADING... [{bar}] {percentage}%\r", end="", flush=True)
 
 
 if __name__ == "__main__":

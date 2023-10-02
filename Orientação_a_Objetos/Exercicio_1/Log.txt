@@ -48,3 +48,55 @@ message: disconnect smartphone
 Classe: LogFile
 message: Connecting to Smartphone
 Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: You must charge the device before turning it on.
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
+message: Connecting to Smartphone
+Classe: LogFile
+message: disconnect smartphone
+Classe: LogFile
