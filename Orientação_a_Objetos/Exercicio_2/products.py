@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
-from util import Order_number
+from util import Order_number, Sale_id
 
 
 class Product(ABC):
     def __init__(self):
         self.products = []
-        self._order_number = Order_number.generate_order_number()
+        self.order_number = Order_number.generate_order_number()
+        self.sale_id = Sale_id.generate_id_number()
 
     @abstractmethod
     def calc_price(self):
@@ -24,9 +25,27 @@ class Long_band(Product):
     def __init__(self):
         super().__init__()
         self.product_options = {
-            1: {"Nome": "300 MB", "Preço": 149.99, "Pontos": 250},
-            2: {"Nome": "200 MB", "Preço": 99.99, "Pontos": 100},
-            3: {"Nome": "600 MB", "Preço": 199.99, "Pontos": 500},
+            1: {
+                "Nome": "300 MB",
+                "Preço": 149.99,
+                "Pontos": 250,
+                "Ordem": self.order_number,
+                "Id Venda": self.sale_id,
+            },
+            2: {
+                "Nome": "200 MB",
+                "Preço": 99.99,
+                "Pontos": 100,
+                "Ordem": self.order_number,
+                "Id Venda": self.sale_id,
+            },
+            3: {
+                "Nome": "600 MB",
+                "Preço": 199.99,
+                "Pontos": 500,
+                "Ordem": self.order_number,
+                "Id Venda": self.sale_id,
+            },
         }
 
     def calc_price(self):
@@ -51,7 +70,14 @@ class Long_band(Product):
                 break
 
     def extract_product(self):
-        print(self.products)
+        for product_info in self.products:
+            teste = self.sale_id
+            print(f"ID VENDA:{teste}")
+            print("###############################")
+            print(
+                f"Nome: {product_info['Nome']}\nPreço: {product_info['Preço']}\nPontos: {product_info['Pontos']}\nOrdem: {self.order_number}"
+            )
+            print("################################")
 
 
 ### Teste ###1

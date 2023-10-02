@@ -9,3 +9,9 @@ class Order_number:
         order_number += order_number[:5] + "-" + order_number[5:]
         order_number += "1"
         return order_number
+
+
+class Sale_id:
+    def generate_id_number():
+        number_id = "".join([str(random.randint(0, 9)) for _ in range(7)])
+        return number_id
