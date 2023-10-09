@@ -10,15 +10,15 @@ class Product(ABC):
 
     @abstractmethod
     def calc_price(self):
-        raise NotImplementedError("Você deve escolher uma classe produto especifica!")
+        ...
 
     @abstractmethod
     def add_product(self):
-        raise NotImplementedError("Você deve escolher uma classe produto especifica!")
+        ...
 
     @abstractmethod
     def extract_product(self):
-        raise NotImplementedError("Você deve instanciar uma classe produto especifica!")
+        ...
 
 
 class Long_band(Product):
@@ -78,6 +78,8 @@ class Long_band(Product):
 
 
 if __name__ == "__main__":
+    bl_teste_1  = Product()
+    bl_teste_1.add_product()
     bl_teste = Long_band()
     bl_teste.add_product()
     bl_teste.extract_product()
