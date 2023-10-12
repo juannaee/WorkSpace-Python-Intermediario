@@ -6,13 +6,10 @@
         "editor.autoIndent": "advanced",
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
-        
-
     },
     "files.autoSave": "afterDelay",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "python.formatting.provider": "none",
     "tabnine.experimentalAutoImports": true,
     "explorer.compactFolders": false,
     "git.confirmSync": false,
@@ -21,9 +18,5 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "debug.terminal.clearBeforeReusing": true,
-    "code-runner.clearPreviousOutput": true,
-   
-
-
-
+    "editor.rulers": [80],
 }
