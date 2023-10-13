@@ -18,5 +18,5 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "debug.terminal.clearBeforeReusing": true,
-    "editor.rulers": [80],
+    "editor.rulers": [80,120],
 }
