@@ -12,18 +12,24 @@ class Account(abc.ABC):
         self.account = account
         self.balance = balance
         self.total_balance = None
+        self.value_deposit = None
 
     @abc.abstractmethod
     def withdraw(self, value_withdraw):
         ...
 
     def deposit(self, value_deposit):
+        self.value_deposit = value_deposit
         display_img("Depositando.....")
         self.total_balance = self.balance + value_deposit
         return self.total_balance
 
     def details(self):
-        return f"Detalhes da Conta:\nSaldo Atual: R$ {self.total_balance:.2f}"
+        return (
+            f"Detalhes da Conta:\nSaldo Antes do deposito: R$ {self.balance}"
+            f"\nValor depositado: R$ {self.value_deposit}"
+            f"\nSaldo atual: R$ {self.total_balance}"
+        )
 
 
 class Teste(Account):
@@ -41,6 +47,6 @@ class Teste(Account):
 
 
 if __name__ == "__main__":
-    teste = Teste("teste", "teste", 100)
-    teste.deposit(2500)
+    teste = Teste("teste", "teste", 1000)
+    teste.deposit(1000)
     print(teste.details())
