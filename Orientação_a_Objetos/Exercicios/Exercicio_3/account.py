@@ -11,8 +11,9 @@ class Account(abc.ABC):
         self.agency = agency
         self.account = account
         self.balance = balance
-        self.total_balance = None
-        self.value_deposit = None
+        self.total_balance = balance
+        self.value_deposit = 0
+        self.value_withdraw = 0
 
     @abc.abstractmethod
     def withdraw(self, value_withdraw):
@@ -21,14 +22,31 @@ class Account(abc.ABC):
     def deposit(self, value_deposit):
         self.value_deposit = value_deposit
         display_img("Depositando.....")
-        self.total_balance = self.balance + value_deposit
-        return self.total_balance
+        if value_deposit:
+            self.total_balance = self.balance + value_deposit
 
     def details(self):
+        deposit_details = (
+            f" {'R$ ' + str(round(self.value_deposit,2))}"
+            if self.value_deposit
+            else " Não houve depositos"
+        )
+        withdraw_details = (
+            f" {'R$ ' + str(round(self.value_withdraw,2))}"
+            if self.value_withdraw
+            else " Não houve saque"
+            if self.value_withdraw < self.total_balance
+            else " Saque indisponivel,Saldo insuficiente!"
+        )
+
+        current_balance = f"R$ {round(self.total_balance,2)}"
+
         return (
-            f"Detalhes da Conta:\nSaldo Antes do deposito: R$ {self.balance}"
-            f"\nValor depositado: R$ {self.value_deposit}"
-            f"\nSaldo atual: R$ {self.total_balance}"
+            f"Historico da conta:"
+            f"\nSaldo pré deposito / saque: R$ {self.balance}"
+            f"\nValor depositado:{deposit_details}"
+            f"\nValor sacado:{withdraw_details}"
+            f"\nSaldo atual:{current_balance}"
         )
 
 
@@ -36,11 +54,13 @@ class Teste(Account):
     def __init__(self, agency, account, balance):
         super().__init__(agency, account, balance)
 
-    def withdraw(self, value_withdraw):
-        return super().withdraw(value_withdraw)
-
     def deposit(self, value_deposit):
         return super().deposit(value_deposit)
+
+    def withdraw(self, value_withdraw):
+        if self.total_balance >= value_withdraw:
+            self.total_balance -= value_withdraw
+        self.value_withdraw = value_withdraw
 
     def details(self):
         return super().details()
@@ -48,5 +68,6 @@ class Teste(Account):
 
 if __name__ == "__main__":
     teste = Teste("teste", "teste", 1000)
-    teste.deposit(1000)
+    teste.deposit(500)
+    teste.withdraw(1000)
     print(teste.details())
