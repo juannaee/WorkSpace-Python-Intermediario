@@ -68,6 +68,6 @@ class Teste(Account):
 
 if __name__ == "__main__":
     teste = Teste("teste", "teste", 1000)
-    teste.deposit(500)
-    teste.withdraw(1000)
+    teste.deposit(1000)
+    teste.withdraw(5000)
     print(teste.details())
