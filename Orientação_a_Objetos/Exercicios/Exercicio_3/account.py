@@ -31,13 +31,12 @@ class Account(abc.ABC):
             if self.value_deposit
             else " Não houve depositos"
         )
-        withdraw_details = (
-            f" {'R$ ' + str(round(self.value_withdraw,2))}"
-            if self.value_withdraw
-            else " Não houve saque"
-            if self.value_withdraw < self.total_balance
-            else " Saque indisponivel,Saldo insuficiente!"
-        )
+        if self.value_withdraw > 0:
+            withdraw_details = f" {'R$ ' + str(round(self.value_withdraw,2))}"
+        else:
+            withdraw_details = " Não houve saque"
+        if self.value_withdraw < self.total_balance:
+            withdraw_details = "Saque indisponivel,Saldo insuficiente!"
 
         current_balance = f"R$ {round(self.total_balance,2)}"
 
@@ -60,7 +59,7 @@ class Teste(Account):
     def withdraw(self, value_withdraw):
         if self.total_balance >= value_withdraw:
             self.total_balance -= value_withdraw
-        self.value_withdraw = value_withdraw
+            self.value_withdraw = value_withdraw
 
     def details(self):
         return super().details()
@@ -68,6 +67,5 @@ class Teste(Account):
 
 if __name__ == "__main__":
     teste = Teste("teste", "teste", 1000)
-    teste.deposit(1000)
-    teste.withdraw(5000)
+    teste.withdraw(1200)
     print(teste.details())
