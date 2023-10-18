@@ -1,13 +1,14 @@
 import abc
 from display import Display
+from execptions import ExceptHandle
 
 
-def display_img(msg_img):
+def display_img(msg_img: str):
     print(Display.display_status(final=100, init=1, msg=msg_img))
 
 
 class Account(abc.ABC):
-    def __init__(self, agency, account, balance):
+    def __init__(self, agency: int, account: int, balance: float) -> None:
         self.agency = agency
         self.account = account
         self.balance = balance
@@ -17,10 +18,11 @@ class Account(abc.ABC):
         self.historical_transition = []
 
     @abc.abstractmethod
-    def withdraw(self, value_withdraw):
+    def withdraw(self, value_withdraw: float):
         ...
 
-    def deposit(self, value_deposit):
+    def deposit(self, value_deposit: float):
+        ExceptHandle.execept_value_error(self.deposit, value_deposit)
         self.value_deposit = value_deposit
         display_img("Depositando.....")
         if value_deposit:
@@ -28,7 +30,7 @@ class Account(abc.ABC):
             transition = f"Deposito de R$ {value_deposit:.2f}"
             self.historical_transition.append(transition)
 
-    def details(self):
+    def details(self) -> str:
         deposit_details = (
             f" {'R$ ' + str(round(self.value_deposit,2))}"
             if self.value_deposit
@@ -63,6 +65,7 @@ class Teste(Account):
         return super().deposit(value_deposit)
 
     def withdraw(self, value_withdraw):
+        ExceptHandle.execept_value_error(self.withdraw, value_withdraw)
         if self.total_balance >= value_withdraw:
             self.total_balance -= value_withdraw
             self.value_withdraw = value_withdraw
@@ -75,8 +78,6 @@ class Teste(Account):
 
 if __name__ == "__main__":
     teste = Teste("teste", "teste", 1000)
-    teste.deposit(300.95)
-    teste.deposit(200.75)
-    teste.deposit(1000.99)
-    teste.withdraw(1200.45)
+    teste.deposit(500)
+    teste.withdraw("teste")
     print(teste.details())
