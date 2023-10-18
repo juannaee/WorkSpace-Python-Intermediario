@@ -14,6 +14,7 @@ class Account(abc.ABC):
         self.total_balance = balance
         self.value_deposit = 0
         self.value_withdraw = 0
+        self.historical_transition = []
 
     @abc.abstractmethod
     def withdraw(self, value_withdraw):
@@ -24,6 +25,8 @@ class Account(abc.ABC):
         display_img("Depositando.....")
         if value_deposit:
             self.total_balance = self.balance + value_deposit
+            transition = f"Deposito de R$ {value_deposit:.2f}"
+            self.historical_transition.append(transition)
 
     def details(self):
         deposit_details = (
@@ -40,12 +43,15 @@ class Account(abc.ABC):
 
         current_balance = f"R$ {round(self.total_balance,2)}"
 
+        transition_details = "\n".join(self.historical_transition)
+
         return (
             f"Historico da conta:"
             f"\nSaldo pré deposito / saque: R$ {self.balance}"
             f"\nValor depositado:{deposit_details}"
             f"\nValor sacado:{withdraw_details}"
-            f"\nSaldo atual:{current_balance}"
+            f"\nSaldo atual:{current_balance}\n"
+            f"\nHistorico de transições: {transition_details}"
         )
 
 
@@ -60,6 +66,8 @@ class Teste(Account):
         if self.total_balance >= value_withdraw:
             self.total_balance -= value_withdraw
             self.value_withdraw = value_withdraw
+            transition = f"Saque de: R$ {value_withdraw:.2f}"
+            self.historical_transition.append(transition)
 
     def details(self):
         return super().details()
@@ -67,5 +75,8 @@ class Teste(Account):
 
 if __name__ == "__main__":
     teste = Teste("teste", "teste", 1000)
-    teste.withdraw(1200)
+    teste.deposit(300.95)
+    teste.deposit(200.75)
+    teste.deposit(1000.99)
+    teste.withdraw(1200.45)
     print(teste.details())
