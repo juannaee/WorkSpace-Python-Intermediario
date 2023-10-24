@@ -40,7 +40,7 @@ class Account(abc.ABC):
             withdraw_details = f" {'R$ ' + str(round(self.value_withdraw,2))}"
         else:
             withdraw_details = " Não houve saque"
-        if self.value_withdraw < self.total_balance:
+        if self.value_withdraw > self.total_balance:
             withdraw_details = "Saque indisponivel,Saldo insuficiente!"
 
         current_balance = f"R$ {round(self.total_balance,2)}"
@@ -79,5 +79,5 @@ class Teste(Account):
 if __name__ == "__main__":
     teste = Teste("teste", "teste", 1000)
     teste.deposit(500)
-    teste.withdraw("teste")
+    teste.withdraw(500)
     print(teste.details())
