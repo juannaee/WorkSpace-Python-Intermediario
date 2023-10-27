@@ -25,6 +25,4 @@ class Person:
 p1 = Person("JUAN", "GUILHERME", 21, 2711)
 print(p1)
 p1.name_completed = "Juan Guilherme Silva Lemos"
-print(p1.name_completed)
-
-print(p1.details())
+print(*p1.name_completed)
